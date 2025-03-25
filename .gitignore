@@ -1,3 +1,6 @@
+# customize
+build/*
+
 # Prerequisites
 *.d
 
