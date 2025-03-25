@@ -32,7 +32,7 @@ if (Boost_FOUND)
 endif()
 
 
-include_directories(include)
+include_directories(HackerRank)
 
 option(BUILD_HACKER_TESTS "Build HackerRank tests" ON)
 if (BUILD_HACKER_TESTS)

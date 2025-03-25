@@ -11,7 +11,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 set(SRC_FILES 
-../HackerRank/sales_by_match.cpp
+../HackerRank/sales_by_match.h
 )
 
 # add test executable
