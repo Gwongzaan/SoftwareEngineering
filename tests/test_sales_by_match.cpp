@@ -73,9 +73,9 @@ TEST_F(test_sales_by_match, solution_1)
 TEST_F(test_sales_by_match, solution_2)
 {
     int pairs;
-    for (const auto &[size, pairs_vec] : test_cases)
+    for (const auto &[_, pairs_vec] : test_cases)
     {
-        pairs = solution_2(size, pairs_vec.second);
+        pairs = solution_2(pairs_vec.second.size(), pairs_vec.second);
         EXPECT_EQ(pairs, pairs_vec.first);
     }
 }
