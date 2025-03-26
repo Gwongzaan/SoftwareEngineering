@@ -12,6 +12,7 @@ FetchContent_MakeAvailable(googletest)
 
 set(SRC_FILES 
 ../HackerRank/sales_by_match.h
+../HackerRank/counting_valley.h
 )
 
 configure_file(
@@ -20,11 +21,18 @@ configure_file(
     COPYONLY
 )
 
+configure_file(
+    test_cases_counting_valley.txt 
+    test_cases_counting_valley.txt 
+    COPYONLY
+)
+
 # add test executable
 add_executable(
     test_hackerrank
     main.cpp
     test_sales_by_match.cpp
+    test_counting_valley.cpp
 
     ${SRC_FILES}
 
