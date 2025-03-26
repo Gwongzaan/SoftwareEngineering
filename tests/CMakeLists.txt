@@ -14,6 +14,12 @@ set(SRC_FILES
 ../HackerRank/sales_by_match.h
 )
 
+configure_file(
+    test_cases_sales_by_match.txt
+    test_cases_sales_by_match.txt
+    COPYONLY
+)
+
 # add test executable
 add_executable(
     test_hackerrank
