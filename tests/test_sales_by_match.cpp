@@ -12,6 +12,15 @@ class test_sales_by_match : public ::testing::Test
 protected:
     std::map<std::size_t, std::pair<int, std::vector<int>>> test_cases;
 
+    /**
+     * @brief Set the up test cases object
+     *
+     *  format of test cases
+     *
+     *  <pairs> <vector containing integer>
+     *
+     * @param file
+     */
     void setup_test_cases(std::string file = "test_cases_sales_by_match.txt")
     {
 
