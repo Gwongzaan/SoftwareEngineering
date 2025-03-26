@@ -3,29 +3,32 @@
  * @author Guangzhuan Mo (gwongzaanmok@gmail.com)
  * @brief
  *
- * Question
+ * DESCRIPTION:  description of the problem
  *
- *  An avid hiker keeps meticulous records of their hikes.
- * During the last hike that took exactly  steps,
- * for every step it was noted if it was an uphill, U, or a downhill, D step.
- * Hikes always start and end at sea level,
- * and each step up or down represents a  unit change in altitude.
+ *      An avid hiker keeps meticulous records of their hikes.
+ *      During the last hike that took exactly  steps,
+ *      for every step it was noted if it was an uphill, U, or a downhill, D step.
+ *      Hikes always start and end at sea level,
+ *      and each step up or down represents a  unit change in altitude.
  *
- * We define the following terms:
+ *      We define the following terms:
  *
- * A mountain is a sequence of consecutive steps above sea level,
- * starting with a step up from sea level and ending with a step down to sea level.
+ *      A mountain is a sequence of consecutive steps above sea level,
+ *      starting with a step up from sea level and ending with a step down to sea level.
  *
- * A valley is a sequence of consecutive steps below sea level,
- * starting with a step down from sea level and ending with a step up to sea level.
+ *      A valley is a sequence of consecutive steps below sea level,
+ *      starting with a step down from sea level and ending with a step up to sea level.
  *
- * Given the sequence of up and down steps during a hike,
+ *      Given the sequence of up and down steps during a hike,
  *
- * find and print the number of valleys walked through.
+ *      find and print the number of valleys walked through.
  *
- *  Example
  *
- *  steps = 8, path = [DDUUUUDD]
+ *  EXPLANATION: demonstrate the problem with examples/scenario
+ *
+ *  Example and Test Cases
+ *
+ *  steps = 8, path = [DDUUUUDD], number of valley 1
  *
  *  input format
  *
@@ -33,26 +36,55 @@
  *
  *  sample output
  *
+ *  ANALYSIS: understanding the question and model the solution
  *
- *  Explanation
+ *      QUESTION:
  *
- *  Analysis
- *      - only up or down, each time go up a unit, +1, go down a unit -1
+ *      - the problem is to count numbers of valley walked through
+ *
+ *      KNOWN: What is given?
+ *
+ *      - the hiker takes steps, up(U) or down (D),
+ *
+ *      - the hike start and end at sea level.
+ *
+ *      - a valley is a sequence of steps that start with a step down from the sea level,
+ *          and then comes back up to the sea level.
+ *
+ *      - what is constraint?
+ *
+ *      KEY:
+ *          - track the altitude and detect when the hiker enter and exit a valley.
+ *
+ *      TOUGHT: Modelling
+ *
  *      - sea level is the base, 0
- *      - what is the characteristic of a vellay?  and how to represent them?
- *              start with a step down from sea level,  does it matter?
- *                  because start at the sea level, and end at the sea level,
- *                  start should not matter, because end is start, start is end,
- *              end with a step up to the sea level
- *                  the current level should be -1,
- *          there should be a flag to mark the current level,
+ *      - up +1, down -1,
+ *      - start and end at sea level (0), therefore,
  *
- *      - identifying pattern. is there a similar question meet before?
+ *              whenever the current level transit from -1 to 0,
+ *              it indicates exiting a valley.
  *
- *      - steps
- *          iterate the path
- *          track up and down by +1, -1
- *              if prevous_level == -1, current_level == 0, going out of a valley
+ *
+ *      PATTERN: identify if there is a similar question meet before?
+ *
+ *      SOLUTION: KEY TO the model
+ *          - iterate the path one by one
+ *          - in each iteration,if  previous-level == -1 and current_level == 0,
+ *              that is the current-level is transiting from -1 to  0,
+ *              which indicates hiker is exiting a valley.
+ *
+ *      DATASTRUCTURE: need extra data structure to model? what data structure can help? why and why not?
+ *
+ *      OPTIMIZATION:
+ *
+ *      TIMECOMPLEXITY:
+ *
+ *      SPACECOMPLEXITY:
+ *
+ *      EXTENTIONS: what kind of real problem similar to this?
+ *
+ *      SUMMARY: what pattern can be extra?
  *
  *
  * @version 0.1.0
