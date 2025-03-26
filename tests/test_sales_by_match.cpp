@@ -10,7 +10,8 @@
 class test_sales_by_match : public ::testing::Test
 {
 protected:
-    std::map<std::size_t, std::pair<int, std::vector<int>>> test_cases;
+    /// @brief <case_no, <pairs, array>>
+    std::map<int, std::pair<int, std::vector<int>>> test_cases;
 
     /**
      * @brief Set the up test cases object
@@ -33,7 +34,7 @@ protected:
         }
 
         std::string line;
-        int elem, pairs;
+        int elem = 0, pairs = 0, no = 0;
         std::vector<int> tmp;
         while (std::getline(fh, line))
         {
@@ -43,7 +44,7 @@ protected:
             {
                 tmp.push_back(elem);
             }
-            test_cases.insert({tmp.size(), {pairs, tmp}});
+            test_cases.insert({++no, {pairs, tmp}});
             tmp.clear();
         }
     }
@@ -57,9 +58,14 @@ protected:
 TEST_F(test_sales_by_match, solution_1)
 {
     int pairs;
-    for (const auto &[size, pairs_vec] : test_cases)
+    for (const auto &[case_no, pairs_vec] : test_cases)
     {
-        pairs = solution_1(size, pairs_vec.second);
+        std::cout << "test case " << case_no << " : " << std::endl;
+        std::copy(pairs_vec.second.begin(), pairs_vec.second.end(), std::ostream_iterator<int>(std::cout, " "));
+        std::cout << std::endl;
+
+        pairs = solution_1(pairs_vec.second.size(), pairs_vec.second);
+
         EXPECT_EQ(pairs, pairs_vec.first);
     }
 }
