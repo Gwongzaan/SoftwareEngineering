@@ -1,0 +1,1 @@
+[sliding window technique](./HackerRank/get_equal_substrings_within_budgets.h)

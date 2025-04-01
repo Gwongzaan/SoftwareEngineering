@@ -27,12 +27,18 @@ configure_file(
     COPYONLY
 )
 
+configure_file(
+    test_cases_get_equal_substrings_within_budgets.txt
+    test_cases_get_equal_substrings_within_budgets.txt
+    COPYONLY
+)
 # add test executable
 add_executable(
     test_hackerrank
     main.cpp
     test_sales_by_match.cpp
     test_counting_valley.cpp
+    test_get_equal_substrings_within_budgets.cpp
 
     ${SRC_FILES}
 
